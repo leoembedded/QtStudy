@@ -1,0 +1,8 @@
+build-QtStudy-QT_4_8_6-Debug/debug/mainwindow.o
+*.o
+build-QtStudy-QT_4_8_6-Debug/debug/moc_mainwindow.cpp
+build-QtStudy-QT_4_8_6-Debug/debug/QtStudy.exe
+build-QtStudy-QT_4_8_6-Debug/Makefile
+build-QtStudy-QT_4_8_6-Debug/Makefile.Debug
+build-QtStudy-QT_4_8_6-Debug/Makefile.Release
+build-QtStudy-QT_4_8_6-Debug/ui_mainwindow.h
