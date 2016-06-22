@@ -15,6 +15,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+
+    void showChildDialog();
+
 private:
     Ui::MainWindow *ui;
 };
