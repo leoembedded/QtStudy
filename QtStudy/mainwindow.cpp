@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDialog>
-#include "dialog.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -22,7 +22,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::showChildDialog()
 {
-    QDialog *dlg = new QDialog(this);
-    dlg->show();
+//    QDialog *dlg = new QDialog(this);
+//    dlg->show();
+
+LoginDialog.show();
 }
 
