@@ -4,6 +4,16 @@
 #include <QDebug>
 #include <QtNetwork>
 
+// 创建表格
+QString createSqlTable = "create table Sensor(id           integer primary key autoincrement, "
+                                           "Verson      real,"
+                                           "Time        verchar(16),"
+                                           "PM2_5       real,"
+                                           "Temperature real,"
+                                           "Humidity    int,"
+                                           "CO2         int)";
+
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -34,7 +44,12 @@ MainWindow::MainWindow(QWidget *parent) :
             qDebug() << address.toString();
     }
 
+    // 创建数据库
     SqliteDataBase.CreateDataBase("test2.db");
+
+    // 创建table
+    SqliteDataBase.CreateDataBaseTable(createSqlTable);
+
 
 }
 
