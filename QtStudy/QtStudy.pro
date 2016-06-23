@@ -5,8 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
-QT       += network             #增加网络库
-
+QT       += network             #增加网络
+QT       += sql                 #增加数据
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QtStudy
@@ -15,11 +15,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    dialog.cpp
+    dialog.cpp \
+    form.cpp \
+    database.cpp
 
 HEADERS  += mainwindow.h \
     form.h \
-    dialog.h
+    dialog.h \
+    form.h \
+    database.h
 
 FORMS    += mainwindow.ui \
-    dialog.ui
+    dialog.ui \
+    form.ui

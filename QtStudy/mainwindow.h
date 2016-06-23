@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "dialog.h"
+#include "form.h"
+#include "database.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,12 +20,22 @@ public:
 
 public slots:
 
-    void showChildDialog();
+    void showLoginDialog();                                             // Login槽
+    void showTcpConnect();                                              // TCP连接页面槽
+
 
 private:
     Ui::MainWindow *ui;
 
-    Dialog LoginDialog;
+    Dialog loginDialog;
+
+    Form tcpConnectForm;
+
+    DataBase SqliteDataBase;
+
+
+    // Private Function
+    void connectSignalWithSlot();                                       // 连接信号和槽
 };
 
 #endif // MAINWINDOW_H

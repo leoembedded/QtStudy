@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDialog>
 #include <QDebug>
-#include <QtNetwork>>
+#include <QtNetwork>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,10 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     setWindowFlags(Qt::FramelessWindowHint);
 
     // 增加按钮并修改显示内容 通过TR转码
-    ui->newScreenButton->setText(tr("新窗口"));
+    ui->newScreenButton->setText("Login");
 
     // 绑定信号和槽
-    connect(ui->newScreenButton, SIGNAL(clicked()), this, SLOT(showChildDialog()));
+    connectSignalWithSlot();
 
     // 获取本机名字
     QString localHostName = QHostInfo::localHostName();
@@ -34,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent) :
             qDebug() << address.toString();
     }
 
+    SqliteDataBase.CreateDataBase("test2.db");
+
 }
 
 MainWindow::~MainWindow()
@@ -41,12 +43,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::showChildDialog()
+// 连接信号和槽
+void MainWindow::connectSignalWithSlot()
+{
+    // 绑定信号和槽
+    connect(ui->newScreenButton, SIGNAL(clicked()), this, SLOT(showLoginDialog()));
+    // 绑定信号和槽
+    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(showTcpConnect()));
+}
+
+void MainWindow::showLoginDialog()
 {
 //    QDialog *dlg = new QDialog(this);
 //    dlg->show();
 
-    LoginDialog.show();
+    loginDialog.show();
 
+}
+
+void MainWindow::showTcpConnect()
+{
+    tcpConnectForm.show();
 }
 
