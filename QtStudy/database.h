@@ -14,7 +14,7 @@ public:
 
     void CreateDataBase(const QString &dbName);
     void CreateDataBaseTable(const QString &tableName);
-    void DeleteDataBaseItem(const QString &Item, QString &value);
+    void DeleteDataBaseItem(const QString &tableName, const QString &Item, QString &value);
 };
 
 #endif // DATABASE_H
