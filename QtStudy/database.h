@@ -8,6 +8,8 @@
 #include <QSqlError>
 #include <QFile>
 
+#include <QDateTime>
+
 class DataBase
 {
 public:
@@ -15,6 +17,7 @@ public:
     void CreateDataBase(const QString &dbName);
     void CreateDataBaseTable(const QString &tableName);
     void DeleteDataBaseItem(const QString &tableName, const QString &Item, QString &value);
+    void InsertDataBaseItem(const QString &tableName, const QString &item, float value);
 };
 
 #endif // DATABASE_H

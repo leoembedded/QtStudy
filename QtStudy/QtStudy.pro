@@ -23,7 +23,8 @@ HEADERS  += mainwindow.h \
     form.h \
     dialog.h \
     form.h \
-    database.h
+    database.h \
+    pravitestruct.h
 
 FORMS    += mainwindow.ui \
     dialog.ui \

@@ -5,14 +5,19 @@
 #include <QtNetwork>
 
 // 创建表格
-QString createSqlTable = "create table Sensor(id           integer primary key autoincrement, "
-                                           "Verson      real,"
-                                           "Time        verchar(16),"
-                                           "PM2_5       real,"
-                                           "Temperature real,"
-                                           "Humidity    int,"
-                                           "CO2         int)";
+QString createTablePM2_5 = "create table PM2_5(id           integer primary key autoincrement, "
+                                           "Time        verchar(32),"
+                                           "PM2_5       int)";
 
+
+QString createTableTempHumi = "create table TempHumi(id           integer primary key autoincrement, "
+                                           "Time        verchar(32),"
+                                           "Temperature real,"
+                                           "Humidity    int)";
+
+QString createTableCO2 = "create table CO2(id           integer primary key autoincrement, "
+                                             "Time        verchar(32),"
+                                             "CO2    int)";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -48,7 +53,12 @@ MainWindow::MainWindow(QWidget *parent) :
     SqliteDataBase.CreateDataBase("test2.db");
 
     // 创建table
-    SqliteDataBase.CreateDataBaseTable(createSqlTable);
+    SqliteDataBase.CreateDataBaseTable(createTablePM2_5);
+    SqliteDataBase.CreateDataBaseTable(createTableTempHumi);
+    SqliteDataBase.CreateDataBaseTable(createTableCO2);
+
+
+    SqliteDataBase.InsertDataBaseItem("PM2_5", "PM2_5", 20);
 
 
 }
